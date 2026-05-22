@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""costctl — small CLI to manage AWS cost-related resources.
+"""costctl - small CLI to manage AWS cost-related resources.
 
 W6 XBrain side challenge starter. Fork this repo, customize for your group,
 then submit per the W6 announcement.
@@ -71,7 +71,7 @@ def build_parser():
     idl.add_argument("--hours", type=int, default=24)
 
     # ---- stretch: migrate-gp3 ----
-    m = sub.add_parser("migrate-gp3", help="(stretch) gp2 → gp3 EBS migration")
+    m = sub.add_parser("migrate-gp3", help="(stretch) gp2 -> gp3 EBS migration")
     m.add_argument("--apply", action="store_true", help="default is dry-run")
     m.add_argument("--volume-id", help="restrict apply to this volume")
 
