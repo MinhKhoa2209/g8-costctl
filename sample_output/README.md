@@ -1,25 +1,12 @@
 # sample_output/
 
-These files are **illustrative examples** showing the shape of `costctl`
-output. They are NOT real account data.
+These files now contain **real outputs** captured from the workshop account in
+region `us-west-2` on `2026-05-22`.
 
-When you submit, replace each `*_example.txt` with a real output from running
-`costctl` against your workshop account. Then delete the example files.
+Files:
 
-## How to produce real samples
+- `list_ec2_example.txt` — output of `./costctl.py --region us-west-2 list ec2`
+- `list_ec2_missing_app_example.txt` — output of `./costctl.py --region us-west-2 list ec2 --missing-tag Application`
+- `cost_example.txt` — output of `./costctl.py --region us-west-2 cost --tag Application=FoodieDash --days 7`
 
-```bash
-./costctl.py list ec2 > sample_output/list_ec2_$(date +%F).txt
-./costctl.py list ec2 --missing-tag Application > sample_output/list_ec2_missing_app_$(date +%F).txt
-./costctl.py cost --tag Application=<your-app> --days 7 > sample_output/cost_<your-app>_$(date +%F).txt
-```
-
-The trainer will `git clone` your repo, follow the README, and expect to
-reproduce roughly these outputs (allowing for natural drift in timestamps and
-resource lists between snapshots).
-
-## Anti-pattern
-
-Don't paste fabricated output. If `costctl list ec2` against your account
-returns 0 rows, commit that — it's a valid output. Don't invent fake instance
-IDs to make the sample look "interesting".
+These values can drift over time as resources and costs change in the account.
